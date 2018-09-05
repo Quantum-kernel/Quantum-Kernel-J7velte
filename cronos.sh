@@ -18,7 +18,7 @@
 
 # Directory Contol
 CR_DIR=$(pwd)
-CR_TC=/home/prashantp01/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+CR_TC=/home/prashantp01/UBERTC-aarch64-linux-android-6.0/bin/aarch64-linux-android-
 CR_DTS=arch/arm64/boot/dts
 CR_DTB=$CR_DIR/boot.img-dtb
 # Kernel Variables

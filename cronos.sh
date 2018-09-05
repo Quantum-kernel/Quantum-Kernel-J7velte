@@ -36,7 +36,7 @@ export PLATFORM_VERSION=$CR_PLATFORM
 export $CR_ARCH
 ##########################################
 # Device specific Variables [SM-J710F]
-CR_DTSFILES_J710F="exynos7420-noblelte_eur_open_06.dtb"
+CR_DTSFILES_J710F="exynos7870-j7xelte_eur_open_00.dtb exynos7870-j7xelte_eur_open_01.dtb exynos7870-j7xelte_eur_open_02.dtb exynos7870-j7xelte_eur_open_03.dtb exynos7870-j7xelte_eur_open_04.dtb"
 CR_CONFG_J710F=j7xelte_03_defconfig
 CR_VARIANT_J710F=J7xelte
 ##########################################

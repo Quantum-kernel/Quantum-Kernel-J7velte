@@ -39,6 +39,10 @@ export $CR_ARCH
 CR_DTSFILES_J710F="exynos7870-j7xelte_eur_open_00.dtb exynos7870-j7xelte_eur_open_01.dtb exynos7870-j7xelte_eur_open_02.dtb exynos7870-j7xelte_eur_open_03.dtb exynos7870-j7xelte_eur_open_04.dtb"
 CR_CONFG_J710F=j7xelte_03_defconfig
 CR_VARIANT_J710F=J7xelte
+# Device specific Variables [SM-J701F]
+CR_DTSFILES_J701F="exynos7870-j7velte_sea_open_00.dtb exynos7870-j7velte_sea_open_01.dtb exynos7870-j7velte_sea_open_03.dtb"
+CR_CONFG_J701F=exynos7870-j7velte_sea_open_defconfig
+CR_VARIANT_J701F=J7velte
 ##########################################
 
 # Script functions
@@ -96,7 +100,7 @@ echo "----------------------------------------------"
 echo "$CR_NAME $CR_VERSION Build Script"
 echo "----------------------------------------------"
 PS3='Please select your option : '
-menuvar=("SM-J710F" "Exit")
+menuvar=("SM-J710F" "SM-J701F" "Exit")
 select menuvar in "${menuvar[@]}"
 do
     case $menuvar in
@@ -107,6 +111,24 @@ do
 	    CR_VARIANT=$CR_VARIANT_J710F
 	    CR_CONFG=$CR_CONFG_J710F
 	    CR_DTSFILES=$CR_DTSFILES_J710F
+	    BUILD_ZIMAGE
+	    BUILD_DTB
+            echo " "
+            echo "----------------------------------------------"
+            echo "$CR_VARIANT kernel build finished."
+	    echo "Press Any key to end the script"
+ 	    echo "Combined DTB Size = $sizT Kb"
+            echo "----------------------------------------------"
+            read -n1 -r key
+            break
+            ;;
+        "SM-J701F")
+            clear
+            CLEAN_SOURCE
+            echo "Starting $CR_VARIANT_J701F kernel build..."
+	    CR_VARIANT=$CR_VARIANT_J701F
+	    CR_CONFG=$CR_CONFG_J701F
+	    CR_DTSFILES=$CR_DTSFILES_J701F
 	    BUILD_ZIMAGE
 	    BUILD_DTB
             echo " "
